@@ -19,8 +19,9 @@ plt.annotate('THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED',
 
 plt.plot(data)
 
-plt.xlabel('time')
-plt.ylabel('my overall health')
+plt.title('I am not unhappy with this result')
+plt.xlabel('number of beers')
+plt.ylabel('likelihood of Guido taking the train to Utrecht')
 
 #fig = plt.figure()
 #ax = fig.add_subplot(1, 1, 1)
