@@ -4,7 +4,7 @@ import numpy as np
 plt.xkcd()
 
 fig = plt.figure()
-ax = fig.add_subplot(1, 1, 1)
+ax = fig.add_axes((0.1, 0.1, 0.8, 0.7))
 ax.spines['right'].set_color('none')
 ax.spines['top'].set_color('none')
 plt.xticks([])
@@ -26,7 +26,7 @@ plt.annotate('Over the line!!'.upper(), xy=(375, 0), arrowprops=dict(arrowstyle=
 
 plt.plot(events[:,0], events[:,1], 'k')
 
-plt.title('Likelihood that Guido will take the train to Utrecht'.upper())
+plt.suptitle('Likelihood that Guido will take the train to Utrecht'.upper(), y=0.93)
 plt.xlabel('Friday evening advances'.upper())
 plt.ylabel('likelihood of safe return'.upper())
 
