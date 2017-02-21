@@ -17,7 +17,7 @@ e_one_beer = 70, 1
 e_movies = 150, 0.9
 e_one_whisky = 350, 0.5
 
-events = np.array([ (0, 1), e_one_beer, (100, 0.9), e_movies, (190, 0.5), e_one_whisky, (400, -0.5) ])
+events = np.array([ (-20, 1), e_one_beer, (100, 0.9), e_movies, (190, 0.5), e_one_whisky, (400, -0.5) ])
 
 plt.annotate('"I guess I can \nhave one beer"'.upper(), xy=e_one_beer, arrowprops=dict(arrowstyle='->'), xytext=(15, 0.7))
 plt.annotate('Esther: "I\'m going\nto the movies"'.upper(), xy=e_movies, arrowprops=dict(arrowstyle='->'), xytext=(130, 1))
