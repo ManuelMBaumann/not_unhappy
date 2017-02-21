@@ -27,6 +27,16 @@ plt.annotate('Over the line!!'.upper(), xy=(375, 0), arrowprops=dict(arrowstyle=
 
 plt.plot(events[:,0], events[:,1], 'k')
 
+w = 25
+h = 0.1
+ax.add_patch(matplotlib.patches.Ellipse((200, 0.08), w, h, fill=False, edgecolor='k', linewidth=2))
+ax.add_patch(matplotlib.patches.Ellipse((200, 0.08), w/10, h/10, fill=True, edgecolor='k', facecolor='k'))
+ax.add_patch(matplotlib.patches.Ellipse((200-2*w/10, 0.08+h/10), w/10, h/10, fill=True, edgecolor='k', facecolor='k'))
+ax.add_patch(matplotlib.patches.Ellipse((200-2.2*w/10, 0.08-2*h/10), w/10, h/10, fill=True, edgecolor='k', facecolor='k'))
+ax.plot([161, 182], [0.05, 0.05], 'k', linewidth=1)
+ax.plot([159, 178], [0.08, 0.08], 'k', linewidth=1)
+ax.plot([164, 181], [0.11, 0.11], 'k', linewidth=1)
+
 plt.suptitle('Likelihood that Guido will take the train to Utrecht'.upper(), y=0.93)
 plt.xlabel('Friday evening advances'.upper())
 plt.ylabel('likelihood of safe return'.upper())
