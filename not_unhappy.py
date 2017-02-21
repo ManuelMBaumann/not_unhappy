@@ -19,9 +19,13 @@ plt.annotate('THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED',
 
 plt.plot(data)
 
-plt.title('I am not unhappy with this result')
-plt.xlabel('number of beers')
-plt.ylabel('likelihood of Guido taking the train to Utrecht')
+plt.title('Likelihood that Guido will take the train to Utrecht')
+plt.xlabel('the evening advances')
+plt.ylabel('likelihood of safe return')
+
+plt.xticks([10, 40, 60, 85], ['18:00','20:30', '22:00', '02:30'])
+plt.yticks([0.9], ['1.0'])
+
 
 #fig = plt.figure()
 #ax = fig.add_subplot(1, 1, 1)
