@@ -19,6 +19,7 @@ e_one_whisky = 350, 0.5
 
 events = np.array([ (-20, 1), e_one_beer, (100, 0.9), e_movies, (190, 0.5), e_one_whisky, (400, -0.5) ])
 
+plt.annotate('git commit -m\n"And fuck the shit"'.upper(), xy=(0,1), arrowprops=dict(arrowstyle='->'), xytext=(0, 1.1))
 plt.annotate('"I guess I can \nhave one beer"'.upper(), xy=e_one_beer, arrowprops=dict(arrowstyle='->'), xytext=(15, 0.7))
 plt.annotate('Esther: "I\'m going\nto the movies"'.upper(), xy=e_movies, arrowprops=dict(arrowstyle='->'), xytext=(130, 1))
 plt.annotate('"I guess I can \nhave one whisky"'.upper(), xy=e_one_whisky, arrowprops=dict(arrowstyle='->'), xytext=(300, 0.7))
