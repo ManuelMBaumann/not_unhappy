@@ -14,13 +14,13 @@ ax.set_ylim([-30, 10])
 data = np.ones(100)
 data[70:] -= np.arange(30)
 
-plt.annotate('THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED',
+plt.annotate('I guess I can \nhave one beer',
              xy=(70, 1), arrowprops=dict(arrowstyle='->'), xytext=(15, -10))
 
 plt.plot(data)
 
 plt.title('Likelihood that Guido will take the train to Utrecht')
-plt.xlabel('the evening advances')
+plt.xlabel('Friday evening advances')
 plt.ylabel('likelihood of safe return')
 
 plt.xticks([10, 40, 60, 85], ['18:00','20:30', '22:00', '02:30'])
