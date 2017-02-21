@@ -9,36 +9,32 @@ ax.spines['right'].set_color('none')
 ax.spines['top'].set_color('none')
 plt.xticks([])
 plt.yticks([])
-ax.set_ylim([-30, 10])
+ax.set_ylim([-0.1, 1.2])
+# set the y-spine
+ax.spines['bottom'].set_position('zero')
 
-data = np.ones(100)
-data[70:] -= np.arange(30)
+e_one_beer = 70, 1
+e_movies = 150, 0.9
+e_one_whisky = 350, 0.5
 
-plt.annotate('I guess I can \nhave one beer',
-             xy=(70, 1), arrowprops=dict(arrowstyle='->'), xytext=(15, -10))
+events = np.array([ (0, 1), e_one_beer, (100, 0.9), e_movies, (190, 0.5), e_one_whisky, (400, -0.5) ])
 
-plt.plot(data)
+plt.annotate('"I guess I can \nhave one beer"'.upper(), xy=e_one_beer, arrowprops=dict(arrowstyle='->'), xytext=(15, 0.7))
+plt.annotate('Esther: "I\'m going\nto the movies"'.upper(), xy=e_movies, arrowprops=dict(arrowstyle='->'), xytext=(130, 1))
+plt.annotate('"I guess I can \nhave one whisky"'.upper(), xy=e_one_whisky, arrowprops=dict(arrowstyle='->'), xytext=(300, 0.7))
+plt.annotate('Over the line!!'.upper(), xy=(375, 0), arrowprops=dict(arrowstyle='->'), xytext=(400, 0.35))
 
-plt.title('Likelihood that Guido will take the train to Utrecht')
-plt.xlabel('Friday evening advances')
-plt.ylabel('likelihood of safe return')
+plt.plot(events[:,0], events[:,1], 'k')
 
-plt.xticks([10, 40, 60, 85], ['18:00','20:30', '22:00', '02:30'])
-plt.yticks([0.9], ['1.0'])
+plt.title('Likelihood that Guido will take the train to Utrecht'.upper())
+plt.xlabel('Friday evening advances'.upper())
+plt.ylabel('likelihood of safe return'.upper())
 
+t = [(18,0), (20,30), (22,0), (26,30)]
+s = [i*60+j for i, j in t]
+ax.set_xlim(-20, s[-1]-s[0]+20)
+plt.xticks([i-s[0] for i in s], ['{:02}:{:02}'.format(i%24, j) for i, j in t])
+plt.yticks([1], ['1.0'])
 
-#fig = plt.figure()
-#ax = fig.add_subplot(1, 1, 1)
-#ax.bar([-0.125, 1.0-0.125], [0, 100], 0.25)
-#ax.spines['right'].set_color('none')
-#ax.spines['top'].set_color('none')
-#ax.xaxis.set_ticks_position('bottom')
-#ax.set_xticks([0, 1])
-#ax.set_xlim([-0.5, 1.5])
-#ax.set_ylim([0, 110])
-#ax.set_xticklabels(['CONFIRMED BY\nEXPERIMENT', 'REFUTED BY\nEXPERIMENT'])
-#plt.yticks([])
-
-#plt.title("CLAIMS OF SUPERNATURAL POWERS")
 
 plt.show()
