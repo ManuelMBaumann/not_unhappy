@@ -1,9 +1,11 @@
 from matplotlib import pyplot as plt
+import matplotlib.patches
 import numpy as np
 
 plt.xkcd()
 
-fig = plt.figure()
+cm_per_inch = 2.54
+fig = plt.figure(figsize=(15*2/cm_per_inch, 10*2/cm_per_inch))
 ax = fig.add_axes((0.1, 0.1, 0.8, 0.7))
 ax.spines['right'].set_color('none')
 ax.spines['top'].set_color('none')
@@ -47,5 +49,5 @@ ax.set_xlim(-20, s[-1]-s[0]+20)
 plt.xticks([i-s[0] for i in s], ['{:02}:{:02}'.format(i%24, j) for i, j in t])
 plt.yticks([1], ['1.0'])
 
-
+plt.savefig('not_unhappy.png', dpi=300)
 plt.show()
